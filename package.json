@@ -17,6 +17,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:e2e:install": "turbo run test:e2e:install",
+    "test:e2e:run": "turbo run test:e2e:run",
     "docker:build:remix-app": "docker build -t epic-stack-monorepo -f ./apps/epic-app/other/Dockerfile .",
     "start-remix-production": "pnpm run --filter @epic-stack-monorepo/epic-app start",
     "start": "turbo run start",
