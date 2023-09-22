@@ -13,7 +13,7 @@ source = "data"
 destination = "/data"
 
 [deploy]
-release_command = "node ./other/sentry-create-release"
+release_command = "node ./apps/epic-app/other/sentry-create-release"
 
 [[services]]
 internal_port = 8080

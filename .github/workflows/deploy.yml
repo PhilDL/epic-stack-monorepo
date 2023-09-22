@@ -199,7 +199,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: apps/epic-app/Dockerfile
+          file: apps/epic-app/other/Dockerfile
           push: true
           tags:
             registry.fly.io/${{ steps.app_name.outputs.value }}:${{
