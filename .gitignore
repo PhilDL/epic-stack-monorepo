@@ -1,22 +1,22 @@
 node_modules
 .DS_store
 
-/build
-/public/build
-/server-build
+/apps/**/build
+/apps/**/public/build
+/apps/**/server-build
 .env
 
-/prisma/data.db
-/prisma/data.db-journal
-/tests/prisma
+/apps/**/prisma/data.db
+/apps/**/prisma/data.db-journal
+/apps/**/tests/prisma
 
-/test-results/
-/playwright-report/
-/playwright/.cache/
-/tests/fixtures/email/
-/coverage
+/apps/**/test-results/
+/apps/**/playwright-report/
+/apps/**/playwright/.cache/
+/apps/**/tests/fixtures/email/
+/apps/**/coverage
 
-/other/cache.db
+/apps/**/other/cache.db
 
 # Easy way to create temporary files/folders that won't accidentally be added to git
 *.local.*

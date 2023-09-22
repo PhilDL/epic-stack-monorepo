@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center"><a href="https://www.epicweb.dev/epic-stack">The Epic Stack 🚀</a></h1>
+  <h1 align="center"><a href="https://www.epicweb.dev/epic-stack">The Epic Stack Monorepo 🚀</a></h1>
   <strong align="center">
     Ditch analysis paralysis and start shipping Epic Web apps.
   </strong>
@@ -11,44 +11,29 @@
   </p>
 </div>
 
-```sh
-npx create-remix@latest --install --init --git-init --template epicweb-dev/epic-stack
+This monorepo was created with `pnpm` for space efficiency and more convienence
+in monorepos than `npm`.
+
+## Local development
+
+All the following commands are run from the root of the monorepo.
+
+### Install dependencies
+
+```bash
+pnpm i
 ```
 
-[![The Epic Stack](https://github-production-user-asset-6210df.s3.amazonaws.com/1500684/246885449-1b00286c-aa3d-44b2-9ef2-04f694eb3592.png)](https://www.epicweb.dev/epic-stack)
+Given the name of our app in `package.json` is `@epic-stack-monorepo/epic-app`:
 
-[The Epic Stack](https://www.epicweb.dev/epic-stack)
+### Build all packages
 
-<hr />
+```bash
+pnpm run --filter @epic-stack-monorepo/epic-app build
+```
 
-## Watch Kent's Introduction to The Epic Stack
+### Dev epic-stack app
 
-[![screenshot of a YouTube video](https://github-production-user-asset-6210df.s3.amazonaws.com/1500684/242088051-6beafa78-41c6-47e1-b999-08d3d3e5cb57.png)](https://www.youtube.com/watch?v=yMK5SVRASxM)
-
-["The Epic Stack" by Kent C. Dodds at #RemixConf 2023 💿](https://www.youtube.com/watch?v=yMK5SVRASxM)
-
-## Docs
-
-[Read the docs](https://github.com/epicweb-dev/epic-stack/blob/main/docs)
-(please 🙏).
-
-## Support
-
-- 🆘 Join the
-  [discussion on GitHub](https://github.com/epicweb-dev/epic-stack/discussions)
-  and the [KCD Community on Discord](https://kcd.im/discord).
-- 💡 Create an
-  [idea discussion](https://github.com/epicweb-dev/epic-stack/discussions/new?category=ideas)
-  for suggestions.
-- 🐛 Open a [GitHub issue](https://github.com/epicweb-dev/epic-stack/issues) to
-  report a bug.
-
-## Branding
-
-Want to talk about the Epic Stack in a blog post or talk? Great! Here are some
-assets you can use in your material:
-[EpicWeb.dev/brand](https://epicweb.dev/brand)
-
-## Thanks
-
-You rock 🪨
+```bash
+pnpm run --filter @epic-stack-monorepo/epic-app dev
+```

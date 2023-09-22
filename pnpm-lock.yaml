@@ -4,345 +4,365 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@conform-to/react':
-    specifier: ^0.9.0
-    version: 0.9.0(react@18.2.0)
-  '@conform-to/zod':
-    specifier: ^0.9.0
-    version: 0.9.0(@conform-to/dom@0.9.0)(zod@3.22.2)
-  '@epic-web/remember':
-    specifier: ^1.0.2
-    version: 1.0.2
-  '@epic-web/totp':
-    specifier: ^1.1.1
-    version: 1.1.1
-  '@nasa-gcn/remix-seo':
-    specifier: ^2.0.0
-    version: 2.0.0(@remix-run/react@2.0.0)(@remix-run/server-runtime@2.0.0)
-  '@paralleldrive/cuid2':
-    specifier: ^2.2.2
-    version: 2.2.2
-  '@prisma/client':
-    specifier: ^5.3.1
-    version: 5.3.1(prisma@5.3.1)
-  '@radix-ui/react-checkbox':
-    specifier: ^1.0.4
-    version: 1.0.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
-  '@radix-ui/react-dropdown-menu':
-    specifier: ^2.0.5
-    version: 2.0.5(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
-  '@radix-ui/react-label':
-    specifier: ^2.0.2
-    version: 2.0.2(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
-  '@radix-ui/react-slot':
-    specifier: ^1.0.2
-    version: 1.0.2(@types/react@18.2.22)(react@18.2.0)
-  '@radix-ui/react-toast':
-    specifier: ^1.1.4
-    version: 1.1.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
-  '@radix-ui/react-tooltip':
-    specifier: ^1.0.6
-    version: 1.0.6(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
-  '@react-email/components':
-    specifier: ^0.0.7
-    version: 0.0.7
-  '@remix-run/css-bundle':
-    specifier: ^2.0.0
-    version: 2.0.0
-  '@remix-run/express':
-    specifier: ^2.0.0
-    version: 2.0.0(express@4.18.2)(typescript@5.2.2)
-  '@remix-run/node':
-    specifier: ^2.0.0
-    version: 2.0.0(typescript@5.2.2)
-  '@remix-run/react':
-    specifier: ^2.0.0
-    version: 2.0.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
-  '@remix-run/router':
-    specifier: ^1.9.0
-    version: 1.9.0
-  '@remix-run/server-runtime':
-    specifier: ^2.0.0
-    version: 2.0.0(typescript@5.2.2)
-  '@sentry/remix':
-    specifier: ^7.69.0
-    version: 7.69.0(@remix-run/node@2.0.0)(@remix-run/react@2.0.0)(react@18.2.0)
-  address:
-    specifier: ^1.2.2
-    version: 1.2.2
-  autoprefixer:
-    specifier: ^10.4.15
-    version: 10.4.15(postcss@8.4.30)
-  bcryptjs:
-    specifier: ^2.4.3
-    version: 2.4.3
-  better-sqlite3:
-    specifier: ^8.6.0
-    version: 8.6.0
-  cachified:
-    specifier: ^3.5.4
-    version: 3.5.4
-  chalk:
-    specifier: ^5.3.0
-    version: 5.3.0
-  class-variance-authority:
-    specifier: ^0.7.0
-    version: 0.7.0
-  close-with-grace:
-    specifier: ^1.2.0
-    version: 1.2.0
-  clsx:
-    specifier: ^2.0.0
-    version: 2.0.0
-  compression:
-    specifier: ^1.7.4
-    version: 1.7.4
-  confetti-react:
-    specifier: ^2.5.0
-    version: 2.5.0(react@18.2.0)
-  cross-env:
-    specifier: ^7.0.3
-    version: 7.0.3
-  date-fns:
-    specifier: ^2.30.0
-    version: 2.30.0
-  dotenv:
-    specifier: ^16.3.1
-    version: 16.3.1
-  eslint-plugin-remix-react-routes:
-    specifier: ^1.0.5
-    version: 1.0.5(@remix-run/dev@2.0.0)(eslint@8.49.0)(typescript@5.2.2)
-  execa:
-    specifier: ^8.0.1
-    version: 8.0.1
-  express:
-    specifier: ^4.18.2
-    version: 4.18.2
-  express-rate-limit:
-    specifier: ^7.0.1
-    version: 7.0.1(express@4.18.2)
-  get-port:
-    specifier: ^7.0.0
-    version: 7.0.0
-  helmet:
-    specifier: ^7.0.0
-    version: 7.0.0
-  intl-parse-accept-language:
-    specifier: ^1.0.0
-    version: 1.0.0
-  isbot:
-    specifier: ^3.7.0
-    version: 3.7.0
-  litefs-js:
-    specifier: ^1.1.2
-    version: 1.1.2
-  lru-cache:
-    specifier: ^10.0.1
-    version: 10.0.1
-  morgan:
-    specifier: ^1.10.0
-    version: 1.10.0
-  prisma:
-    specifier: ^5.3.1
-    version: 5.3.1
-  qrcode:
-    specifier: ^1.5.3
-    version: 1.5.3
-  react:
-    specifier: ^18.2.0
-    version: 18.2.0
-  react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
-  remix-auth:
-    specifier: ^3.5.1
-    version: 3.5.1(@remix-run/react@2.0.0)(@remix-run/server-runtime@2.0.0)
-  remix-auth-form:
-    specifier: ^1.3.0
-    version: 1.3.0(@remix-run/server-runtime@2.0.0)(remix-auth@3.5.1)
-  remix-auth-github:
-    specifier: ^1.6.0
-    version: 1.6.0(@remix-run/server-runtime@2.0.0)(remix-auth@3.5.1)
-  remix-utils:
-    specifier: ^6.6.0
-    version: 6.6.0(@remix-run/react@2.0.0)(@remix-run/server-runtime@2.0.0)(react@18.2.0)(typescript@5.2.2)(zod@3.22.2)
-  set-cookie-parser:
-    specifier: ^2.6.0
-    version: 2.6.0
-  sonner:
-    specifier: ^0.7.4
-    version: 0.7.4(react-dom@18.2.0)(react@18.2.0)
-  source-map-support:
-    specifier: ^0.5.21
-    version: 0.5.21
-  spin-delay:
-    specifier: ^1.2.0
-    version: 1.2.0(react@18.2.0)
-  tailwind-merge:
-    specifier: ^1.14.0
-    version: 1.14.0
-  tailwindcss:
-    specifier: ^3.3.3
-    version: 3.3.3
-  tailwindcss-animate:
-    specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@3.3.3)
-  tailwindcss-radix:
-    specifier: ^2.8.0
-    version: 2.8.0
-  zod:
-    specifier: ^3.22.2
-    version: 3.22.2
+importers:
 
-devDependencies:
-  '@faker-js/faker':
-    specifier: ^8.1.0
-    version: 8.1.0
-  '@playwright/test':
-    specifier: ^1.38.0
-    version: 1.38.0
-  '@remix-run/dev':
-    specifier: ^2.0.0
-    version: 2.0.0(@remix-run/serve@2.0.0)(@types/node@20.6.2)(typescript@5.2.2)
-  '@remix-run/eslint-config':
-    specifier: ^2.0.0
-    version: 2.0.0(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2)
-  '@remix-run/serve':
-    specifier: ^2.0.0
-    version: 2.0.0(typescript@5.2.2)
-  '@remix-run/testing':
-    specifier: ^2.0.0
-    version: 2.0.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
-  '@sly-cli/sly':
-    specifier: ^1.4.10
-    version: 1.4.10(typescript@5.2.2)
-  '@testing-library/jest-dom':
-    specifier: ^6.1.3
-    version: 6.1.3(vitest@0.34.4)
-  '@testing-library/react':
-    specifier: ^14.0.0
-    version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
-  '@testing-library/user-event':
-    specifier: ^14.5.1
-    version: 14.5.1(@testing-library/dom@9.3.3)
-  '@total-typescript/ts-reset':
-    specifier: ^0.5.1
-    version: 0.5.1
-  '@types/bcryptjs':
-    specifier: ^2.4.4
-    version: 2.4.4
-  '@types/better-sqlite3':
-    specifier: ^7.6.5
-    version: 7.6.5
-  '@types/compression':
-    specifier: ^1.7.3
-    version: 1.7.3
-  '@types/cookie':
-    specifier: ^0.5.2
-    version: 0.5.2
-  '@types/eslint':
-    specifier: ^8.44.2
-    version: 8.44.2
-  '@types/express':
-    specifier: ^4.17.17
-    version: 4.17.17
-  '@types/fs-extra':
-    specifier: ^11.0.2
-    version: 11.0.2
-  '@types/glob':
-    specifier: ^8.1.0
-    version: 8.1.0
-  '@types/morgan':
-    specifier: ^1.9.5
-    version: 1.9.5
-  '@types/node':
-    specifier: ^20.6.2
-    version: 20.6.2
-  '@types/qrcode':
-    specifier: ^1.5.2
-    version: 1.5.2
-  '@types/react':
-    specifier: ^18.2.22
-    version: 18.2.22
-  '@types/react-dom':
-    specifier: ^18.2.7
-    version: 18.2.7
-  '@types/set-cookie-parser':
-    specifier: ^2.4.3
-    version: 2.4.3
-  '@types/source-map-support':
-    specifier: ^0.5.7
-    version: 0.5.7
-  '@vitejs/plugin-react':
-    specifier: ^4.0.4
-    version: 4.0.4(vite@4.4.9)
-  '@vitest/coverage-v8':
-    specifier: ^0.34.4
-    version: 0.34.4(vitest@0.34.4)
-  chokidar:
-    specifier: ^3.5.3
-    version: 3.5.3
-  cookie:
-    specifier: ^0.5.0
-    version: 0.5.0
-  enforce-unique:
-    specifier: ^1.1.1
-    version: 1.1.1
-  esbuild:
-    specifier: ^0.19.3
-    version: 0.19.3
-  eslint:
-    specifier: ^8.49.0
-    version: 8.49.0
-  eslint-config-prettier:
-    specifier: ^9.0.0
-    version: 9.0.0(eslint@8.49.0)
-  fs-extra:
-    specifier: ^11.1.1
-    version: 11.1.1
-  glob:
-    specifier: ^10.3.4
-    version: 10.3.4
-  jsdom:
-    specifier: ^22.1.0
-    version: 22.1.0
-  msw:
-    specifier: 0.0.0-fetch.rc-19
-    version: 0.0.0-fetch.rc-19(typescript@5.2.2)
-  node-html-parser:
-    specifier: ^6.1.10
-    version: 6.1.10
-  npm-run-all:
-    specifier: ^4.1.5
-    version: 4.1.5
-  patch-package:
-    specifier: ^8.0.0
-    version: 8.0.0
-  prettier:
-    specifier: ^3.0.3
-    version: 3.0.3
-  prettier-plugin-sql:
-    specifier: ^0.15.1
-    version: 0.15.1(prettier@3.0.3)
-  prettier-plugin-tailwindcss:
-    specifier: ^0.5.4
-    version: 0.5.4(prettier@3.0.3)
-  remix-flat-routes:
-    specifier: ^0.5.11
-    version: 0.5.11(@remix-run/dev@2.0.0)
-  tsx:
-    specifier: ^3.12.10
-    version: 3.12.10
-  typescript:
-    specifier: ^5.2.2
-    version: 5.2.2
-  vite:
-    specifier: ^4.4.9
-    version: 4.4.9(@types/node@20.6.2)
-  vitest:
-    specifier: ^0.34.4
-    version: 0.34.4(jsdom@22.1.0)
+  .:
+    dependencies:
+      '@ianvs/prettier-plugin-sort-imports':
+        specifier: ^4.1.0
+        version: 4.1.0(prettier@3.0.3)
+      prettier:
+        specifier: ^3.0.3
+        version: 3.0.3
+      prettier-plugin-sql:
+        specifier: ^0.15.1
+        version: 0.15.1(prettier@3.0.3)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.5.4
+        version: 0.5.4(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier@3.0.3)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+
+  apps/epic-app:
+    dependencies:
+      '@conform-to/react':
+        specifier: ^0.9.0
+        version: 0.9.0(react@18.2.0)
+      '@conform-to/zod':
+        specifier: ^0.9.0
+        version: 0.9.0(@conform-to/dom@0.9.0)(zod@3.22.2)
+      '@epic-web/remember':
+        specifier: ^1.0.2
+        version: 1.0.2
+      '@epic-web/totp':
+        specifier: ^1.1.1
+        version: 1.1.1
+      '@nasa-gcn/remix-seo':
+        specifier: ^2.0.0
+        version: 2.0.0(@remix-run/react@2.0.0)(@remix-run/server-runtime@2.0.0)
+      '@paralleldrive/cuid2':
+        specifier: ^2.2.2
+        version: 2.2.2
+      '@prisma/client':
+        specifier: ^5.3.1
+        version: 5.3.1(prisma@5.3.1)
+      '@radix-ui/react-checkbox':
+        specifier: ^1.0.4
+        version: 1.0.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-dropdown-menu':
+        specifier: ^2.0.5
+        version: 2.0.5(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-label':
+        specifier: ^2.0.2
+        version: 2.0.2(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slot':
+        specifier: ^1.0.2
+        version: 1.0.2(@types/react@18.2.22)(react@18.2.0)
+      '@radix-ui/react-toast':
+        specifier: ^1.1.4
+        version: 1.1.4(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tooltip':
+        specifier: ^1.0.6
+        version: 1.0.6(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@react-email/components':
+        specifier: ^0.0.7
+        version: 0.0.7
+      '@remix-run/css-bundle':
+        specifier: ^2.0.0
+        version: 2.0.0
+      '@remix-run/express':
+        specifier: ^2.0.0
+        version: 2.0.0(express@4.18.2)(typescript@5.2.2)
+      '@remix-run/node':
+        specifier: ^2.0.0
+        version: 2.0.0(typescript@5.2.2)
+      '@remix-run/react':
+        specifier: ^2.0.0
+        version: 2.0.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      '@remix-run/router':
+        specifier: ^1.9.0
+        version: 1.9.0
+      '@remix-run/server-runtime':
+        specifier: ^2.0.0
+        version: 2.0.0(typescript@5.2.2)
+      '@sentry/remix':
+        specifier: ^7.69.0
+        version: 7.69.0(@remix-run/node@2.0.0)(@remix-run/react@2.0.0)(react@18.2.0)
+      address:
+        specifier: ^1.2.2
+        version: 1.2.2
+      autoprefixer:
+        specifier: ^10.4.15
+        version: 10.4.15(postcss@8.4.30)
+      bcryptjs:
+        specifier: ^2.4.3
+        version: 2.4.3
+      better-sqlite3:
+        specifier: ^8.6.0
+        version: 8.6.0
+      cachified:
+        specifier: ^3.5.4
+        version: 3.5.4
+      chalk:
+        specifier: ^5.3.0
+        version: 5.3.0
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
+      close-with-grace:
+        specifier: ^1.2.0
+        version: 1.2.0
+      clsx:
+        specifier: ^2.0.0
+        version: 2.0.0
+      compression:
+        specifier: ^1.7.4
+        version: 1.7.4
+      confetti-react:
+        specifier: ^2.5.0
+        version: 2.5.0(react@18.2.0)
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
+      dotenv:
+        specifier: ^16.3.1
+        version: 16.3.1
+      eslint-plugin-remix-react-routes:
+        specifier: ^1.0.5
+        version: 1.0.5(@remix-run/dev@2.0.0)(eslint@8.49.0)(typescript@5.2.2)
+      execa:
+        specifier: ^8.0.1
+        version: 8.0.1
+      express:
+        specifier: ^4.18.2
+        version: 4.18.2
+      express-rate-limit:
+        specifier: ^7.0.1
+        version: 7.0.1(express@4.18.2)
+      get-port:
+        specifier: ^7.0.0
+        version: 7.0.0
+      helmet:
+        specifier: ^7.0.0
+        version: 7.0.0
+      intl-parse-accept-language:
+        specifier: ^1.0.0
+        version: 1.0.0
+      isbot:
+        specifier: ^3.7.0
+        version: 3.7.0
+      litefs-js:
+        specifier: ^1.1.2
+        version: 1.1.2
+      lru-cache:
+        specifier: ^10.0.1
+        version: 10.0.1
+      morgan:
+        specifier: ^1.10.0
+        version: 1.10.0
+      prisma:
+        specifier: ^5.3.1
+        version: 5.3.1
+      qrcode:
+        specifier: ^1.5.3
+        version: 1.5.3
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      remix-auth:
+        specifier: ^3.5.1
+        version: 3.5.1(@remix-run/react@2.0.0)(@remix-run/server-runtime@2.0.0)
+      remix-auth-form:
+        specifier: ^1.3.0
+        version: 1.3.0(@remix-run/server-runtime@2.0.0)(remix-auth@3.5.1)
+      remix-auth-github:
+        specifier: ^1.6.0
+        version: 1.6.0(@remix-run/server-runtime@2.0.0)(remix-auth@3.5.1)
+      remix-utils:
+        specifier: ^6.6.0
+        version: 6.6.0(@remix-run/react@2.0.0)(@remix-run/server-runtime@2.0.0)(react@18.2.0)(typescript@5.2.2)(zod@3.22.2)
+      set-cookie-parser:
+        specifier: ^2.6.0
+        version: 2.6.0
+      sonner:
+        specifier: ^0.7.4
+        version: 0.7.4(react-dom@18.2.0)(react@18.2.0)
+      source-map-support:
+        specifier: ^0.5.21
+        version: 0.5.21
+      spin-delay:
+        specifier: ^1.2.0
+        version: 1.2.0(react@18.2.0)
+      tailwind-merge:
+        specifier: ^1.14.0
+        version: 1.14.0
+      tailwindcss:
+        specifier: ^3.3.3
+        version: 3.3.3
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.3.3)
+      tailwindcss-radix:
+        specifier: ^2.8.0
+        version: 2.8.0
+      zod:
+        specifier: ^3.22.2
+        version: 3.22.2
+    devDependencies:
+      '@faker-js/faker':
+        specifier: ^8.1.0
+        version: 8.1.0
+      '@playwright/test':
+        specifier: ^1.38.0
+        version: 1.38.0
+      '@remix-run/dev':
+        specifier: ^2.0.0
+        version: 2.0.0(@remix-run/serve@2.0.0)(@types/node@20.6.2)(typescript@5.2.2)
+      '@remix-run/eslint-config':
+        specifier: ^2.0.0
+        version: 2.0.0(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2)
+      '@remix-run/serve':
+        specifier: ^2.0.0
+        version: 2.0.0(typescript@5.2.2)
+      '@remix-run/testing':
+        specifier: ^2.0.0
+        version: 2.0.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      '@sly-cli/sly':
+        specifier: ^1.4.10
+        version: 1.4.10(typescript@5.2.2)
+      '@testing-library/jest-dom':
+        specifier: ^6.1.3
+        version: 6.1.3(vitest@0.34.4)
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+      '@testing-library/user-event':
+        specifier: ^14.5.1
+        version: 14.5.1(@testing-library/dom@9.3.3)
+      '@total-typescript/ts-reset':
+        specifier: ^0.5.1
+        version: 0.5.1
+      '@types/bcryptjs':
+        specifier: ^2.4.4
+        version: 2.4.4
+      '@types/better-sqlite3':
+        specifier: ^7.6.5
+        version: 7.6.5
+      '@types/compression':
+        specifier: ^1.7.3
+        version: 1.7.3
+      '@types/cookie':
+        specifier: ^0.5.2
+        version: 0.5.2
+      '@types/eslint':
+        specifier: ^8.44.2
+        version: 8.44.2
+      '@types/express':
+        specifier: ^4.17.17
+        version: 4.17.17
+      '@types/fs-extra':
+        specifier: ^11.0.2
+        version: 11.0.2
+      '@types/glob':
+        specifier: ^8.1.0
+        version: 8.1.0
+      '@types/morgan':
+        specifier: ^1.9.5
+        version: 1.9.5
+      '@types/node':
+        specifier: ^20.6.2
+        version: 20.6.2
+      '@types/qrcode':
+        specifier: ^1.5.2
+        version: 1.5.2
+      '@types/react':
+        specifier: ^18.2.22
+        version: 18.2.22
+      '@types/react-dom':
+        specifier: ^18.2.7
+        version: 18.2.7
+      '@types/set-cookie-parser':
+        specifier: ^2.4.3
+        version: 2.4.3
+      '@types/source-map-support':
+        specifier: ^0.5.7
+        version: 0.5.7
+      '@vitejs/plugin-react':
+        specifier: ^4.0.4
+        version: 4.0.4(vite@4.4.9)
+      '@vitest/coverage-v8':
+        specifier: ^0.34.4
+        version: 0.34.4(vitest@0.34.4)
+      chokidar:
+        specifier: ^3.5.3
+        version: 3.5.3
+      cookie:
+        specifier: ^0.5.0
+        version: 0.5.0
+      enforce-unique:
+        specifier: ^1.1.1
+        version: 1.1.1
+      esbuild:
+        specifier: ^0.19.3
+        version: 0.19.3
+      eslint:
+        specifier: ^8.49.0
+        version: 8.49.0
+      eslint-config-prettier:
+        specifier: ^9.0.0
+        version: 9.0.0(eslint@8.49.0)
+      fs-extra:
+        specifier: ^11.1.1
+        version: 11.1.1
+      glob:
+        specifier: ^10.3.4
+        version: 10.3.4
+      jsdom:
+        specifier: ^22.1.0
+        version: 22.1.0
+      msw:
+        specifier: 0.0.0-fetch.rc-19
+        version: 0.0.0-fetch.rc-19(typescript@5.2.2)
+      node-html-parser:
+        specifier: ^6.1.10
+        version: 6.1.10
+      npm-run-all:
+        specifier: ^4.1.5
+        version: 4.1.5
+      patch-package:
+        specifier: ^8.0.0
+        version: 8.0.0
+      prettier:
+        specifier: ^3.0.3
+        version: 3.0.3
+      prettier-plugin-sql:
+        specifier: ^0.15.1
+        version: 0.15.1(prettier@3.0.3)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.5.4
+        version: 0.5.4(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier@3.0.3)
+      remix-flat-routes:
+        specifier: ^0.5.11
+        version: 0.5.11(@remix-run/dev@2.0.0)
+      tsx:
+        specifier: ^3.12.10
+        version: 3.12.10
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.9
+        version: 4.4.9(@types/node@20.6.2)
+      vitest:
+        specifier: ^0.34.4
+        version: 0.34.4(jsdom@22.1.0)
 
 packages:
 
@@ -1467,6 +1487,25 @@ packages:
 
   /@humanwhocodes/object-schema@1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+
+  /@ianvs/prettier-plugin-sort-imports@4.1.0(prettier@3.0.3):
+    resolution: {integrity: sha512-IAXeTLU24k6mRPa6mFbW1qZJ/j0m3OeH44wyijWyr+YqqdNtBnfHxAntOAATS9iDfrT01NesKGsdzqnXdDQa/A==}
+    peerDependencies:
+      '@vue/compiler-sfc': '>=3.0.0'
+      prettier: 2 || 3
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
+    dependencies:
+      '@babel/core': 7.22.20
+      '@babel/generator': 7.22.15
+      '@babel/parser': 7.22.16
+      '@babel/traverse': 7.22.20
+      '@babel/types': 7.22.19
+      prettier: 3.0.3
+      semver: 7.5.4
+    transitivePeerDependencies:
+      - supports-color
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -4202,7 +4241,6 @@ packages:
 
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
-    dev: true
 
   /commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -4601,7 +4639,6 @@ packages:
 
   /discontinuous-range@1.0.0:
     resolution: {integrity: sha512-c68LpLbO+7kP/b1Hr1qs8/BJ09F5khZGTxqxZuhzxpmwJKOgRFHJWIb9/KmqnqHhLdO55aOxFH/EGBvUQbL/RQ==}
-    dev: true
 
   /dlv@1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
@@ -5751,7 +5788,6 @@ packages:
   /get-stdin@8.0.0:
     resolution: {integrity: sha512-sY22aA6xchAzprjyqmSEQv4UbAAzRN0L2dQB0NlN5acTTK9Don6nhoc3eAbUnpZiCANAMfd/+40kVdKfFygohg==}
     engines: {node: '>=10'}
-    dev: true
 
   /get-stream@6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
@@ -7388,7 +7424,6 @@ packages:
 
   /moo@0.5.2:
     resolution: {integrity: sha512-iSAJLHYKnX41mKcJKjqvnAN9sf0LMDTXDEvFv+ffuRR9a1MIuXLjMNL6EsnDHSkKLTWNqQQ5uo61P4EbU4NU+Q==}
-    dev: true
 
   /morgan@1.10.0:
     resolution: {integrity: sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==}
@@ -7494,7 +7529,6 @@ packages:
       moo: 0.5.2
       railroad-diagrams: 1.0.0
       randexp: 0.4.6
-    dev: true
 
   /negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
@@ -7542,7 +7576,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       big-integer: 1.6.51
-    dev: true
 
   /nopt@6.0.0:
     resolution: {integrity: sha512-ZwLpbTgdhuZUnZzjd7nb1ZV+4DoiC6/sfiVKok72ym/4Tlf+DFdlHYmT2JPmcNNWV6Pi3SDf1kT+A4r9RTuT9g==}
@@ -8315,9 +8348,8 @@ packages:
       prettier: 3.0.3
       sql-formatter: 12.2.4
       tslib: 2.6.2
-    dev: true
 
-  /prettier-plugin-tailwindcss@0.5.4(prettier@3.0.3):
+  /prettier-plugin-tailwindcss@0.5.4(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier@3.0.3):
     resolution: {integrity: sha512-QZzzB1bID6qPsKHTeA9qPo1APmmxfFrA5DD3LQ+vbTmAnY40eJI7t9Q1ocqel2EKMWNPLJqdTDWZj1hKYgqSgg==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
@@ -8369,8 +8401,8 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
+      '@ianvs/prettier-plugin-sort-imports': 4.1.0(prettier@3.0.3)
       prettier: 3.0.3
-    dev: true
 
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
@@ -8381,7 +8413,6 @@ packages:
     resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: true
 
   /pretty-format@27.5.1:
     resolution: {integrity: sha512-Qb1gy5OrP5+zDf2Bvnzdl3jsTf1qXVMazbvCoKhtKqVs4/YK4ozX4gKQJJVyNe+cajNPn0KoC0MC3FUmaHWEmQ==}
@@ -8544,7 +8575,6 @@ packages:
 
   /railroad-diagrams@1.0.0:
     resolution: {integrity: sha512-cz93DjNeLY0idrCNOH6PviZGRN9GJhsdm9hpn1YCS879fj4W+x5IFJhhkRZcwVgMmFF7R82UA/7Oh+R8lLZg6A==}
-    dev: true
 
   /randexp@0.4.6:
     resolution: {integrity: sha512-80WNmd9DA0tmZrw9qQa62GPPWfuXJknrmVmLcxvq4uZBdYqb1wYoKTmnlGUchvVWe0XiLupYkBoXVOxz3C8DYQ==}
@@ -8552,7 +8582,6 @@ packages:
     dependencies:
       discontinuous-range: 1.0.0
       ret: 0.1.15
-    dev: true
 
   /range-parser@1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
@@ -8951,7 +8980,6 @@ packages:
   /ret@0.1.15:
     resolution: {integrity: sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==}
     engines: {node: '>=0.12'}
-    dev: true
 
   /retry@0.12.0:
     resolution: {integrity: sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==}
@@ -9266,7 +9294,6 @@ packages:
       argparse: 2.0.1
       get-stdin: 8.0.0
       nearley: 2.20.1
-    dev: true
 
   /ssri@10.0.5:
     resolution: {integrity: sha512-bSf16tAFkGeRlUNDjXu8FzaMQt6g2HZJrun7mtMbIPOddxt3GLMSz5VWUWcqTJUPfLEaDIepGxv+bYQW49596A==}
