@@ -1,0 +1,107 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        "public/build/**",
+        "build/**",
+        "app/styles/tailwind.css",
+        ".cache"
+      ]
+    },
+    "@epic-stack-monorepo/epic-app#start": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/build/**"]
+    },
+    "start": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/build/**"]
+    },
+    "setup": {
+      "outputs": []
+    },
+    "db:migrate:deploy": {
+      "outputs": []
+    },
+    "db:migrate:dev": {
+      "outputs": []
+    },
+    "db:push": {
+      "outputs": []
+    },
+    "db:seed": {
+      "outputs": [],
+      "cache": false
+    },
+    "db:migrate:force": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "generate": {
+      "dependsOn": ["^generate"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "docker:build": {
+      "outputs": [],
+      "cache": false
+    },
+    "test": {
+      "outputs": []
+    },
+    "test:dev": {
+      "outputs": [],
+      "cache": false
+    },
+    "test:e2e:dev": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "cache": false
+    },
+    "test:e2e:ci": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "test:e2e:install": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "test:e2e:run": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "clean": {
+      "cache": false
+    }
+  },
+  "globalDependencies": [".env"],
+  "globalEnv": [
+    "NODE_ENV",
+    "REMIX_APP_PORT",
+    "FLY_REGION",
+    "PRIMARY_REGION",
+    "CI",
+    "PORT",
+    "MOCKS",
+    "LITEFS_DIR",
+    "DATABASE_PATH",
+    "DATABASE_URL",
+    "CACHE_DATABASE_PATH",
+    "SESSION_SECRET",
+    "INTERNAL_COMMAND_TOKEN",
+    "RESEND_API_KEY",
+    "SENTRY_DSN",
+    "GITHUB_CLIENT_ID",
+    "GITHUB_CLIENT_SECRET",
+    "GITHUB_TOKEN"
+  ]
+}

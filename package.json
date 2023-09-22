@@ -7,16 +7,43 @@
     "apps/*",
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "generate": "turbo run generate",
+    "db:migrate:force": "turbo run db:migrate:force --no-cache",
+    "db:seed": "turbo run db:seed --no-cache",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "test:e2e:install": "turbo run test:e2e:install",
+    "test:e2e:run": "turbo run test:e2e:run",
+    "test:e2e:ci": "turbo run test:e2e:ci",
+    "docker:build:remix-app": "docker build -t epic-stack-monorepo -f ./apps/epic-app/other/Dockerfile .",
+    "start-remix-production": "pnpm run --filter @epic-stack-monorepo/epic-app start",
+    "start": "turbo run start",
+    "clean": "turbo run clean",
+    "setup": "turbo run setup",
+    "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "typecheck": "turbo run typecheck",
+    "test:e2e:dev": "turbo run test:e2e:dev",
+    "validate": "turbo run lint typecheck test"
+  },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "prettier": "^3.0.3",
     "prettier-plugin-sql": "^0.15.1",
     "prettier-plugin-tailwindcss": "^0.5.4",
+    "turbo": "^1.10.14",
     "typescript": "^5.2.2"
   },
   "packageManager": "pnpm@8.7.4",
   "engines": {
     "node": "18"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "remix-utils@6.6.0": "patches/remix-utils@6.6.0.patch"
+    }
   }
 }
