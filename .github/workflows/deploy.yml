@@ -61,6 +61,9 @@ jobs:
       - name: 📥 Download deps
         run: pnpm install --ignore-scripts
 
+      - name: 🛠 Setup Database
+        run: pnpm run generate
+
       - name: 🖼 Build icons
         run: pnpm run build
 
