@@ -111,7 +111,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: 🏄 Copy test env vars
-        run: cp .env.example .env
+        run: cp ./apps/epic-app/.env.example ./apps/epic-app/.env
 
       - uses: pnpm/action-setup@v2.4.0
         with:
@@ -124,10 +124,10 @@ jobs:
           cache: 'pnpm'
 
       - name: 📥 Install Playwright Browsers
-        run: npm run test:e2e:install
+        run: pnpm run test:e2e:install
 
       - name: 🛠 Setup Database
-        run: npx prisma migrate deploy
+        run: pnpm run db:migrate:force
 
       - name: 🏦 Cache Database
         id: db-cache
@@ -135,18 +135,19 @@ jobs:
         with:
           path: prisma/data.db
           key:
-            db-cache-schema_${{ hashFiles('./prisma/schema.prisma')
-            }}-migrations_${{ hashFiles('./prisma/migrations/*/migration.sql')
-            }}
+            db-cache-schema_${{
+            hashFiles('./apps/epic-stack/prisma/schema.prisma')
+            }}-migrations_${{
+            hashFiles('./apps/epic-stack/prisma/migrations/*/migration.sql') }}
 
       - name: 🌱 Seed Database
         if: steps.db-cache.outputs.cache-hit != 'true'
-        run: npx prisma db seed
+        run: pnpm db:seed
         env:
           MINIMAL_SEED: true
 
       - name: 🏗 Build
-        run: npm run build
+        run: pnpm run build
 
       - name: 🎭 Playwright tests
         run: npx playwright test

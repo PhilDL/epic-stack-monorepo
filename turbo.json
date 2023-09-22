@@ -67,6 +67,10 @@
       "dependsOn": ["^build"],
       "outputs": []
     },
+    "test:e2e:install": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
     "typecheck": {
       "dependsOn": ["^build"],
       "outputs": []
