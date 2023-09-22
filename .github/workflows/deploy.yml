@@ -91,7 +91,7 @@ jobs:
         run: pnpm install --ignore-scripts
 
       - name: 🏄 Copy test env vars
-        run: cp .env.example .env
+        run: cp apps/epic-app/.env.example apps/epic-app/.env
 
       - name: 🛠 Setup Database
         run: pnpm run generate

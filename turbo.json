@@ -19,6 +19,9 @@
       "dependsOn": ["^build"],
       "outputs": ["public/build/**"]
     },
+    "setup": {
+      "outputs": []
+    },
     "db:migrate:deploy": {
       "outputs": []
     },
