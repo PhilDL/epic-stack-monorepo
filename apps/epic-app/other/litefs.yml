@@ -29,9 +29,9 @@ lease:
     key: 'epic-stack-litefs/${FLY_APP_NAME}'
 
 exec:
-  - cmd: node ./other/setup-swap.js
+  - cmd: node ./apps/epic-app/other/setup-swap.js
 
-  - cmd: npx prisma migrate deploy
+  - cmd: npx prisma migrate deploy --schema apps/epic-stack/prisma/schema.prisma
     if-candidate: true
 
-  - cmd: npm start
+  - cmd: pnpm run start-remix-production

@@ -1,47 +1,52 @@
 # This file is moved to the root directory before building the image
 
-# base node image
-FROM node:18-bookworm-slim as base
-
-# set for base and all layer that inherit from it
-ENV NODE_ENV production
+# pruner 
+FROM node:18-bookworm-slim as pruner
 
 # Install openssl for Prisma
 RUN apt-get update && apt-get install -y fuse3 openssl sqlite3 ca-certificates
+RUN corepack enable
+WORKDIR /app
+RUN yarn global add turbo
+COPY . .
+RUN turbo prune --scope=@epic-stack-monorepo/epic-app --docker
+RUN find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
 
-# Install all node_modules, including dev dependencies
-FROM base as deps
+# base node image
+FROM node:18-bookworm-slim as base
+RUN apt-get update && apt-get install -y fuse3 openssl sqlite3 ca-certificates
+RUN corepack enable
+WORKDIR /app
+COPY .gitignore .gitignore
+COPY --from=pruner /app/out/json/ .
+COPY --from=pruner /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=pruner /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
-WORKDIR /myapp
 
-ADD package.json package-lock.json .npmrc ./
-ADD ./other/patches ./other/patches
-RUN npm install --include=dev
+FROM base AS dev-deps
+WORKDIR /app
+RUN pnpm install --ignore-scripts --no-frozen-lockfile
 
-# Setup production node_modules
-FROM base as production-deps
+FROM base AS production-deps
+WORKDIR /app
+ENV NODE_ENV production
+RUN pnpm install --prod --no-frozen-lockfile
+COPY --from=pruner /app/out/full/apps/epic-app/prisma/schema.prisma /app/apps/epic-app/prisma/schema.prisma
+RUN pnpm dlx prisma generate --schema /app/apps/epic-app/prisma/schema.prisma
 
-WORKDIR /myapp
+FROM base AS builder
+WORKDIR /app
+RUN corepack enable
+# ENV NODE_ENV production
+COPY --from=pruner /app/out/full/ .
+COPY --from=dev-deps /app/ .
+COPY turbo.json turbo.json
+RUN pnpm run generate
+RUN pnpm run build --filter=@epic-stack-monorepo/epic-app...
 
-COPY --from=deps /myapp/node_modules /myapp/node_modules
-ADD package.json package-lock.json .npmrc ./
-RUN npm prune --omit=dev
-
-# Build the app
-FROM base as build
-
-WORKDIR /myapp
-
-COPY --from=deps /myapp/node_modules /myapp/node_modules
-
-ADD prisma .
-RUN npx prisma generate
-
-ADD . .
-RUN npm run build
 
 # Finally, build the production image with minimal footprint
-FROM base
+FROM base AS runner
 
 ENV FLY="true"
 ENV LITEFS_DIR="/litefs/data"
@@ -57,21 +62,19 @@ ENV NODE_ENV="production"
 # add shortcut for connecting to database CLI
 RUN echo "#!/bin/sh\nset -x\nsqlite3 \$DATABASE_URL" > /usr/local/bin/database-cli && chmod +x /usr/local/bin/database-cli
 
-WORKDIR /myapp
+WORKDIR /app
 
-COPY --from=production-deps /myapp/node_modules /myapp/node_modules
-COPY --from=build /myapp/node_modules/.prisma /myapp/node_modules/.prisma
-
-COPY --from=build /myapp/server-build /myapp/server-build
-COPY --from=build /myapp/build /myapp/build
-COPY --from=build /myapp/public /myapp/public
-COPY --from=build /myapp/package.json /myapp/package.json
-COPY --from=build /myapp/prisma /myapp/prisma
-COPY --from=build /myapp/app/components/ui/icons /myapp/app/components/ui/icons
+COPY --from=pruner /app/out/full/ .
+COPY --from=production-deps /app .
+COPY --from=builder /app/apps/epic-app/index.js ./apps/epic-app/index.js
+COPY --from=builder /app/apps/epic-app/build ./apps/epic-app/build
+COPY --from=builder /app/apps/epic-app/public ./apps/epic-app/public
+COPY --from=builder /app/apps/epic-app/server-build ./apps/epic-app/server-build
+COPY --from=builder /app/apps/epic-app/app/components/ui/icons ./apps/epic-app/app/components/ui/icons
 
 # prepare for litefs
 COPY --from=flyio/litefs:0.5.5 /usr/local/bin/litefs /usr/local/bin/litefs
-ADD other/litefs.yml /etc/litefs.yml
+ADD ./apps/epic-app/other/litefs.yml /etc/litefs.yml
 RUN mkdir -p /data ${LITEFS_DIR}
 
 ADD . .
