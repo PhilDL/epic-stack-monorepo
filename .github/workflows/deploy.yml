@@ -65,7 +65,7 @@ jobs:
         run: pnpm run build
 
       - name: 🔎 Type check
-        run: pnpm run typecheck --if-present
+        run: pnpm run typecheck
 
   vitest:
     name: ⚡ Vitest
@@ -89,6 +89,9 @@ jobs:
 
       - name: 🏄 Copy test env vars
         run: cp .env.example .env
+
+      - name: 🛠 Setup Database
+        run: pnpm run generate
 
       - name: 🖼 Build icons
         run: pnpm run build
