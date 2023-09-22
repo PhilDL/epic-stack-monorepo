@@ -123,8 +123,8 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: 📥 Install Playwright Browsers
-        run: pnpm run test:e2e:install
+      - name: 📥 Download deps
+        run: pnpm install
 
       - name: 🛠 Setup Database
         run: pnpm run db:migrate:force
@@ -149,8 +149,8 @@ jobs:
       - name: 🏗 Build
         run: pnpm run build
 
-      - name: 🎭 Playwright tests
-        run: pnpm run test:e2e:run
+      - name: Install Playwright Browsers and run tests
+        run: pnpm test:e2e:ci
 
       - name: 📊 Upload report
         uses: actions/upload-artifact@v3
