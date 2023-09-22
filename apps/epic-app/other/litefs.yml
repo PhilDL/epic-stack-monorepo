@@ -31,7 +31,7 @@ lease:
 exec:
   - cmd: node ./apps/epic-app/other/setup-swap.js
 
-  - cmd: npx prisma migrate deploy --schema apps/epic-stack/prisma/schema.prisma
+  - cmd: npx prisma migrate deploy --schema ./apps/epic-app/prisma/schema.prisma
     if-candidate: true
 
   - cmd: pnpm run start-remix-production
