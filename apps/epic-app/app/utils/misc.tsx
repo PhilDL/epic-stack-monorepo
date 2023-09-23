@@ -1,9 +1,6 @@
 import { useFormAction, useNavigation } from '@remix-run/react'
-import { clsx, type ClassValue } from 'clsx'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSpinDelay } from 'spin-delay'
-import { extendTailwindMerge } from 'tailwind-merge'
-import { extendedTheme } from './extended-theme.ts'
 
 export function getUserImgSrc(imageId?: string | null) {
 	return imageId ? `/resources/user-images/${imageId}` : '/img/user.png'
@@ -25,44 +22,6 @@ export function getErrorMessage(error: unknown) {
 	}
 	console.error('Unable to get error message for error', error)
 	return 'Unknown Error'
-}
-
-function formatColors() {
-	const colors = []
-	for (const [key, color] of Object.entries(extendedTheme.colors)) {
-		if (typeof color === 'string') {
-			colors.push(key)
-		} else {
-			const colorGroup = Object.keys(color).map(subKey =>
-				subKey === 'DEFAULT' ? '' : subKey,
-			)
-			colors.push({ [key]: colorGroup })
-		}
-	}
-	return colors
-}
-
-const customTwMerge = extendTailwindMerge({
-	theme: {
-		colors: formatColors(),
-		borderRadius: Object.keys(extendedTheme.borderRadius),
-	},
-	classGroups: {
-		'font-size': [
-			{
-				text: Object.keys(extendedTheme.fontSize),
-			},
-		],
-		animate: [
-			{
-				animate: Object.keys(extendedTheme.animation),
-			},
-		],
-	},
-})
-
-export function cn(...inputs: ClassValue[]) {
-	return customTwMerge(clsx(inputs))
 }
 
 export function getDomainUrl(request: Request) {

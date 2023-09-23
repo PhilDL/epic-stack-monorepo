@@ -1,9 +1,9 @@
+import { Icon } from '@epic-stack-monorepo/ui/icon'
+import { Input } from '@epic-stack-monorepo/ui/input'
+import { Label } from '@epic-stack-monorepo/ui/label'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
 import { Form, useSearchParams, useSubmit } from '@remix-run/react'
 import { useDebounce, useIsPending } from '#app/utils/misc.tsx'
-import { Icon } from './ui/icon.tsx'
-import { Input } from './ui/input.tsx'
-import { Label } from './ui/label.tsx'
-import { StatusButton } from './ui/status-button.tsx'
 
 export function SearchBar({
 	status,

@@ -1,6 +1,9 @@
 node_modules
 .DS_store
 
+/packages/**/build
+/packages/**/dist
+
 /apps/**/build
 /apps/**/public/build
 /apps/**/server-build

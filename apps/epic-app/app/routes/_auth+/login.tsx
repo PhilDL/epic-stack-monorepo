@@ -1,5 +1,6 @@
 import { conform, useForm } from '@conform-to/react'
 import { getFieldsetConstraint, parse } from '@conform-to/zod'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
 import {
 	json,
 	redirect,
@@ -12,7 +13,6 @@ import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { CheckboxField, ErrorList, Field } from '#app/components/forms.tsx'
 import { Spacer } from '#app/components/spacer.tsx'
-import { StatusButton } from '#app/components/ui/status-button.tsx'
 import { twoFAVerificationType } from '#app/routes/settings+/profile.two-factor.tsx'
 import {
 	getUserId,
@@ -321,7 +321,7 @@ export default function LoginPage() {
 								</StatusButton>
 							</div>
 						</Form>
-						<ul className="mt-5 flex flex-col gap-5 border-b-2 border-t-2 border-border py-3">
+						<ul className="border-border mt-5 flex flex-col gap-5 border-b-2 border-t-2 py-3">
 							{providerNames.map(providerName => (
 								<li key={providerName}>
 									<ProviderConnectionForm

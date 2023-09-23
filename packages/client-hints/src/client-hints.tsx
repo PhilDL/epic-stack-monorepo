@@ -3,6 +3,10 @@
  * are needed by the server, but are only known by the browser.
  */
 import { useRevalidator } from '@remix-run/react'
+import {
+	type TypedResponse,
+	type DataFunctionArgs,
+} from '@remix-run/server-runtime'
 import * as React from 'react'
 import { useRequestInfo } from './request-info.ts'
 
@@ -25,7 +29,7 @@ const clientHints = {
 
 type ClientHintNames = keyof typeof clientHints
 
-function getCookieValue(cookieString: string, name: ClientHintNames) {
+export function getCookieValue(cookieString: string, name: ClientHintNames) {
 	const hint = clientHints[name]
 	if (!hint) {
 		throw new Error(`Unknown client hint: ${name}`)
@@ -78,10 +82,18 @@ export function getHints(request?: Request) {
 /**
  * @returns an object with the client hints and their values
  */
-export function useHints() {
-	const requestInfo = useRequestInfo()
+export function useHints<TData>(): UseHints<TData> {
+	const requestInfo = useRequestInfo<TData>() as {
+		hints: any
+	}
 	return requestInfo.hints
 }
+
+export type UseHints<TData> = TData extends (
+	da: DataFunctionArgs,
+) => Promise<TypedResponse<{ requestInfo: { hints: infer Hints } }>>
+	? Hints
+	: never
 
 /**
  * @returns inline script element that checks for client hints and sets cookies

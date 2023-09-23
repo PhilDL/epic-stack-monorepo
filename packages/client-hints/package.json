@@ -1,0 +1,50 @@
+{
+  "name": "@epic-stack-monorepo/client-hints",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf .turbo node_modules dist",
+    "lint": "eslint ./src --fix",
+    "test": "vitest run",
+    "test:dev": "vitest",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@epic-stack-monorepo/eslint-config": "workspace:*",
+    "@epic-stack-monorepo/tsconfig": "workspace:*",
+    "@remix-run/dev": "^2.0.0",
+    "@remix-run/react": "^2.0.0",
+    "@remix-run/node": "^2.0.0",
+    "@remix-run/server-runtime": "^2.0.0",
+    "rimraf": "^5.0.1",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^0.34.4"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./request-info": {
+      "import": "./src/request-info.ts",
+      "types": "./src/request-info.ts",
+      "default": "./src/request-info.ts"
+    },
+    "./client-hints": {
+      "import": "./src/client-hints.ts",
+      "types": "./src/client-hints.ts",
+      "default": "./src/client-hints.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {}
+  }
+}

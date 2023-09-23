@@ -18,7 +18,19 @@
       "@/icon-name": [
         "./app/components/ui/icons/name.d.ts",
         "./types/icon-name.d.ts"
-      ]
+      ],
+      "@epic-stack-monorepo/ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "@epic-stack-monorepo/ui": [
+        "../../packages/ui/src/index"
+      ],
+      "@epic-stack-monorepo/client-hints/*": [
+        "../../packages/client-hints/src/*"
+      ],
+      "@epic-stack-monorepo/client-hints": [
+        "../../packages/client-hints/src/index"
+      ],
     },
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
