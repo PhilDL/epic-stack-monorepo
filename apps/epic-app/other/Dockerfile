@@ -70,7 +70,7 @@ COPY --from=builder /app/apps/epic-app/index.js ./apps/epic-app/index.js
 COPY --from=builder /app/apps/epic-app/build ./apps/epic-app/build
 COPY --from=builder /app/apps/epic-app/public ./apps/epic-app/public
 COPY --from=builder /app/apps/epic-app/server-build ./apps/epic-app/server-build
-COPY --from=builder /app/apps/epic-app/app/components/ui/icons ./apps/epic-app/app/components/ui/icons
+# COPY --from=builder /app/apps/epic-app/app/components/ui/icons ./apps/epic-app/app/components/ui/icons
 
 # prepare for litefs
 COPY --from=flyio/litefs:0.5.5 /usr/local/bin/litefs /usr/local/bin/litefs

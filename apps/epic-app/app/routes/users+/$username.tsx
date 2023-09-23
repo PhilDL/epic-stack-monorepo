@@ -1,9 +1,9 @@
+import { Button } from '@epic-stack-monorepo/ui/button'
+import { Icon } from '@epic-stack-monorepo/ui/icon'
 import { json, type DataFunctionArgs } from '@remix-run/node'
 import { Form, Link, useLoaderData, type MetaFunction } from '@remix-run/react'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { Spacer } from '#app/components/spacer.tsx'
-import { Button } from '#app/components/ui/button.tsx'
-import { Icon } from '#app/components/ui/icon.tsx'
 import { prisma } from '#app/utils/db.server.ts'
 import { getUserImgSrc, invariantResponse } from '#app/utils/misc.tsx'
 import { useOptionalUser } from '#app/utils/user.ts'
@@ -38,7 +38,7 @@ export default function ProfileRoute() {
 		<div className="container mb-48 mt-36 flex flex-col items-center justify-center">
 			<Spacer size="4xs" />
 
-			<div className="container flex flex-col items-center rounded-3xl bg-muted p-12">
+			<div className="bg-muted container flex flex-col items-center rounded-3xl p-12">
 				<div className="relative w-52">
 					<div className="absolute -top-40">
 						<div className="relative">
@@ -55,9 +55,9 @@ export default function ProfileRoute() {
 
 				<div className="flex flex-col items-center">
 					<div className="flex flex-wrap items-center justify-center gap-4">
-						<h1 className="text-center text-h2">{userDisplayName}</h1>
+						<h1 className="text-h2 text-center">{userDisplayName}</h1>
 					</div>
-					<p className="mt-2 text-center text-muted-foreground">
+					<p className="text-muted-foreground mt-2 text-center">
 						Joined {data.userJoinedDisplay}
 					</p>
 					{isLoggedInUser ? (

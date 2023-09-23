@@ -1,0 +1,152 @@
+{
+  "name": "@epic-stack-monorepo/ui",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "run-s build:*",
+    "build:tsup": "tsup",
+    "build:icons": "tsx ./other/build-icons.ts",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint ./src",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-dropdown-menu": "^2.0.5",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-toast": "^1.1.4",
+    "@radix-ui/react-tooltip": "^1.0.6",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.279.0",
+    "spin-delay": "^1.2.0",
+    "tailwind-merge": "^1.14.0"
+  },
+  "peerDependencies": {
+    "@remix-run/dev": "^1.18.0",
+    "@remix-run/node": "^1.18.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-animate": "^1.0.6"
+  },
+  "devDependencies": {
+    "@chialab/esbuild-plugin-meta-url": "^0.17.7",
+    "@epic-stack-monorepo/eslint-config": "workspace:*",
+    "@epic-stack-monorepo/tsconfig": "workspace:*",
+    "@remix-run/dev": "^2.0.0",
+    "@remix-run/node": "^2.0.0",
+    "@rollup/plugin-url": "^8.0.1",
+    "@sly-cli/sly": "^1.4.10",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/rollup": "^8.1.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/fs-extra": "^11.0.2",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "autoprefixer": "^10.4.15",
+    "concurrently": "^8.2.1",
+    "esbuild-plugin-svgr": "^2.1.0",
+    "execa": "^8.0.1",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.4",
+    "node-html-parser": "^6.1.10",
+    "postcss": "^8.4.29",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-radix": "^2.8.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./tailwind": {
+      "import": "./src/tailwind/index.ts",
+      "types": "./src/tailwind/index.ts",
+      "default": "./dist/tailwind/index.js"
+    },
+    "./button": {
+      "import": "./src/button.tsx",
+      "types": "./src/button.tsx"
+    },
+    "./checkbox": {
+      "import": "./src/checkbox.tsx",
+      "types": "./src/checkbox.tsx"
+    },
+    "./dropdown-menu": {
+      "import": "./src/dropdown-menu.tsx",
+      "types": "./src/dropdown-menu.tsx"
+    },
+    "./icon": {
+      "import": "./src/icon.tsx",
+      "types": "./src/icon.tsx"
+    },
+    "./input": {
+      "import": "./src/input.tsx",
+      "types": "./src/input.tsx"
+    },
+    "./label": {
+      "import": "./src/label.tsx",
+      "types": "./src/label.tsx"
+    },
+    "./status-button": {
+      "import": "./src/status-button.tsx",
+      "types": "./src/status-button.tsx"
+    },
+    "./textarea": {
+      "import": "./src/textarea.tsx",
+      "types": "./src/textarea.tsx"
+    },
+    "./tooltip": {
+      "import": "./src/tooltip.tsx",
+      "types": "./src/tooltip.tsx"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "button": [
+        "src/button.tsx"
+      ],
+      "checkbox": [
+        "src/checkbox.tsx"
+      ],
+      "card": [
+        "src/card.tsx"
+      ],
+      "dropdown-menu": [
+        "src/dropdown-menu.tsx"
+      ],
+      "input": [
+        "src/input.tsx"
+      ],
+      "label": [
+        "src/label.tsx"
+      ],
+      "textarea": [
+        "src/textarea.tsx"
+      ],
+      "tooltip": [
+        "src/tooltip.tsx"
+      ],
+      "icon": [
+        "src/icon.tsx"
+      ],
+      "status-button": [
+        "src/status-button.tsx"
+      ]
+    }
+  }
+}

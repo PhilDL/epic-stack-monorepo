@@ -1,5 +1,6 @@
 import { conform, useForm } from '@conform-to/react'
 import { getFieldsetConstraint, parse } from '@conform-to/zod'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
 import * as E from '@react-email/components'
 import {
 	json,
@@ -11,7 +12,6 @@ import { Link, useFetcher } from '@remix-run/react'
 import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { ErrorList, Field } from '#app/components/forms.tsx'
-import { StatusButton } from '#app/components/ui/status-button.tsx'
 import { prisma } from '#app/utils/db.server.ts'
 import { sendEmail } from '#app/utils/email.server.ts'
 import { EmailSchema, UsernameSchema } from '#app/utils/user-validation.ts'
@@ -130,7 +130,7 @@ export default function ForgotPasswordRoute() {
 			<div className="flex flex-col justify-center">
 				<div className="text-center">
 					<h1 className="text-h1">Forgot Password</h1>
-					<p className="mt-3 text-body-md text-muted-foreground">
+					<p className="text-body-md text-muted-foreground mt-3">
 						No worries, we'll send you reset instructions.
 					</p>
 				</div>
@@ -168,7 +168,7 @@ export default function ForgotPasswordRoute() {
 					</forgotPassword.Form>
 					<Link
 						to="/login"
-						className="mt-11 text-center text-body-sm font-bold"
+						className="text-body-sm mt-11 text-center font-bold"
 					>
 						Back to Login
 					</Link>

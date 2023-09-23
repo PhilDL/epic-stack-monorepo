@@ -1,5 +1,8 @@
 import { useForm } from '@conform-to/react'
 import { getFieldsetConstraint, parse } from '@conform-to/zod'
+import { Button } from '@epic-stack-monorepo/ui/button'
+import { Icon } from '@epic-stack-monorepo/ui/icon'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
 import { json, type DataFunctionArgs } from '@remix-run/node'
 import {
 	Form,
@@ -13,9 +16,6 @@ import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { floatingToolbarClassName } from '#app/components/floating-toolbar.tsx'
 import { ErrorList } from '#app/components/forms.tsx'
-import { Button } from '#app/components/ui/button.tsx'
-import { Icon } from '#app/components/ui/icon.tsx'
-import { StatusButton } from '#app/components/ui/status-button.tsx'
 import { requireUserId } from '#app/utils/auth.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
 import {
@@ -113,7 +113,7 @@ export default function NoteRoute() {
 
 	return (
 		<div className="absolute inset-0 flex flex-col px-10">
-			<h2 className="mb-2 pt-12 text-h2 lg:mb-6">{data.note.title}</h2>
+			<h2 className="text-h2 mb-2 pt-12 lg:mb-6">{data.note.title}</h2>
 			<div className={`${displayBar ? 'pb-24' : 'pb-12'} overflow-y-auto`}>
 				<ul className="flex flex-wrap gap-5 py-5">
 					{data.note.images.map(image => (
@@ -134,7 +134,7 @@ export default function NoteRoute() {
 			</div>
 			{displayBar ? (
 				<div className={floatingToolbarClassName}>
-					<span className="text-sm text-foreground/90 max-[524px]:hidden">
+					<span className="text-foreground/90 text-sm max-[524px]:hidden">
 						<Icon name="clock" className="scale-125">
 							{data.timeAgo} ago
 						</Icon>

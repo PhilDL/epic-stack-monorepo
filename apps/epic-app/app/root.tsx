@@ -1,5 +1,14 @@
 import { useForm } from '@conform-to/react'
 import { parse } from '@conform-to/zod'
+import { Button } from '@epic-stack-monorepo/ui/button'
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuPortal,
+	DropdownMenuTrigger,
+} from '@epic-stack-monorepo/ui/dropdown-menu'
+import { Icon, href as iconsHref } from '@epic-stack-monorepo/ui/icon'
 import { cssBundleHref } from '@remix-run/css-bundle'
 import {
 	json,
@@ -31,19 +40,15 @@ import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import { ErrorList } from './components/forms.tsx'
 import { SearchBar } from './components/search-bar.tsx'
 import { EpicToaster } from './components/toaster.tsx'
-import { Button } from './components/ui/button.tsx'
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuPortal,
-	DropdownMenuTrigger,
-} from './components/ui/dropdown-menu.tsx'
-import { Icon, href as iconsHref } from './components/ui/icon.tsx'
 import fontStyleSheetUrl from './styles/font.css'
 import tailwindStyleSheetUrl from './styles/tailwind.css'
 import { authenticator, getUserId } from './utils/auth.server.ts'
-import { ClientHintCheck, getHints, useHints } from './utils/client-hints.tsx'
+import {
+	ClientHintCheck,
+	getHints,
+	useHints,
+	useRequestInfo,
+} from '@epic-stack-monorepo/client-hints'
 import { getConfetti } from './utils/confetti.server.ts'
 import { prisma } from './utils/db.server.ts'
 import { getEnv } from './utils/env.server.ts'
@@ -54,7 +59,6 @@ import {
 	invariantResponse,
 } from './utils/misc.tsx'
 import { useNonce } from './utils/nonce-provider.ts'
-import { useRequestInfo } from './utils/request-info.ts'
 import { type Theme, setTheme, getTheme } from './utils/theme.server.ts'
 import { makeTimings, time } from './utils/timing.server.ts'
 import { getToast } from './utils/toast.server.ts'
@@ -350,8 +354,8 @@ function UserDropdown() {
  * has not set a preference.
  */
 export function useTheme() {
-	const hints = useHints()
-	const requestInfo = useRequestInfo()
+	const hints = useHints<typeof loader>()
+	const requestInfo = useRequestInfo<typeof loader>()
 	const optimisticMode = useOptimisticThemeMode()
 	if (optimisticMode) {
 		return optimisticMode === 'system' ? hints.theme : optimisticMode

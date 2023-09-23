@@ -1,5 +1,6 @@
 import { conform, useForm, type Submission } from '@conform-to/react'
 import { getFieldsetConstraint, parse } from '@conform-to/zod'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
 import { generateTOTP, verifyTOTP } from '@epic-web/totp'
 import { json, type DataFunctionArgs } from '@remix-run/node'
 import {
@@ -12,7 +13,6 @@ import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { ErrorList, Field } from '#app/components/forms.tsx'
 import { Spacer } from '#app/components/spacer.tsx'
-import { StatusButton } from '#app/components/ui/status-button.tsx'
 import { handleVerification as handleChangeEmailVerification } from '#app/routes/settings+/profile.change-email.tsx'
 import { twoFAVerificationType } from '#app/routes/settings+/profile.two-factor.tsx'
 import { type twoFAVerifyVerificationType } from '#app/routes/settings+/profile.two-factor.verify.tsx'
@@ -249,7 +249,7 @@ export default function VerifyRoute() {
 	const checkEmail = (
 		<>
 			<h1 className="text-h1">Check your email</h1>
-			<p className="mt-3 text-body-md text-muted-foreground">
+			<p className="text-body-md text-muted-foreground mt-3">
 				We've sent you a code to verify your email address.
 			</p>
 		</>
@@ -262,7 +262,7 @@ export default function VerifyRoute() {
 		'2fa': (
 			<>
 				<h1 className="text-h1">Check your 2FA app</h1>
-				<p className="mt-3 text-body-md text-muted-foreground">
+				<p className="text-body-md text-muted-foreground mt-3">
 					Please enter your 2FA code to verify your identity.
 				</p>
 			</>

@@ -1,3 +1,4 @@
+import { cn } from '@epic-stack-monorepo/ui'
 import { json, redirect, type DataFunctionArgs } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { z } from 'zod'
@@ -5,7 +6,7 @@ import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { ErrorList } from '#app/components/forms.tsx'
 import { SearchBar } from '#app/components/search-bar.tsx'
 import { prisma } from '#app/utils/db.server.ts'
-import { cn, getUserImgSrc, useDelayedIsPending } from '#app/utils/misc.tsx'
+import { getUserImgSrc, useDelayedIsPending } from '#app/utils/misc.tsx'
 
 const UserSearchResultSchema = z.object({
 	id: z.string(),
@@ -78,7 +79,7 @@ export default function UsersRoute() {
 								<li key={user.id}>
 									<Link
 										to={user.username}
-										className="flex h-36 w-44 flex-col items-center justify-center rounded-lg bg-muted px-5 py-3"
+										className="bg-muted flex h-36 w-44 flex-col items-center justify-center rounded-lg px-5 py-3"
 									>
 										<img
 											alt={user.name ?? user.username}
@@ -86,11 +87,11 @@ export default function UsersRoute() {
 											className="h-16 w-16 rounded-full"
 										/>
 										{user.name ? (
-											<span className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-center text-body-md">
+											<span className="text-body-md w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">
 												{user.name}
 											</span>
 										) : null}
-										<span className="w-full overflow-hidden text-ellipsis text-center text-body-sm text-muted-foreground">
+										<span className="text-body-sm text-muted-foreground w-full overflow-hidden text-ellipsis text-center">
 											{user.username}
 										</span>
 									</Link>
