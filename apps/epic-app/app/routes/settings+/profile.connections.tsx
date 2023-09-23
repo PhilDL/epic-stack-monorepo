@@ -1,3 +1,11 @@
+import { Icon } from '@epic-stack-monorepo/ui/icon'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from '@epic-stack-monorepo/ui/tooltip'
 import { type SEOHandle } from '@nasa-gcn/remix-seo'
 import {
 	json,
@@ -6,14 +14,6 @@ import {
 } from '@remix-run/node'
 import { useFetcher, useLoaderData } from '@remix-run/react'
 import { useState } from 'react'
-import { Icon } from '#app/components/ui/icon.tsx'
-import { StatusButton } from '#app/components/ui/status-button.tsx'
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from '#app/components/ui/tooltip.tsx'
 import { requireUserId } from '#app/utils/auth.server.ts'
 import { resolveConnectionData } from '#app/utils/connections.server.ts'
 import {
@@ -130,7 +130,7 @@ export default function Connections() {
 			) : (
 				<p>You don't have any connections yet.</p>
 			)}
-			<div className="mt-5 flex flex-col gap-5 border-b-2 border-t-2 border-border py-3">
+			<div className="border-border mt-5 flex flex-col gap-5 border-b-2 border-t-2 py-3">
 				{providerNames.map(providerName => (
 					<ProviderConnectionForm
 						key={providerName}

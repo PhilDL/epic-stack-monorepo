@@ -1,3 +1,4 @@
+import { Button } from '@epic-stack-monorepo/ui/button'
 import { type SEOHandle } from '@nasa-gcn/remix-seo'
 import { json, redirect, type DataFunctionArgs } from '@remix-run/node'
 import {
@@ -10,7 +11,6 @@ import {
 } from '@remix-run/react'
 import { Field } from '#app/components/forms.tsx'
 import { Spacer } from '#app/components/spacer.tsx'
-import { Button } from '#app/components/ui/button.tsx'
 import {
 	cache,
 	getAllCacheKeys,
@@ -125,7 +125,7 @@ export default function CacheAdminRoute() {
 								defaultValue: query,
 							}}
 						/>
-						<div className="flex h-16 w-14 items-center text-lg font-medium text-muted-foreground">
+						<div className="text-muted-foreground flex h-16 w-14 items-center text-lg font-medium">
 							<span title="Total results shown">
 								{data.cacheKeys.sqlite.length + data.cacheKeys.lru.length}
 							</span>

@@ -5,9 +5,9 @@
 // ensure the user gets the right status code and we can display a nicer error
 // message for them than the Remix and/or browser default.
 
+import { Icon } from '@epic-stack-monorepo/ui/icon'
 import { Link, useLocation } from '@remix-run/react'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
-import { Icon } from '#app/components/ui/icon.tsx'
 
 export async function loader() {
 	throw new Response('Not found', { status: 404 })
@@ -28,7 +28,7 @@ export function ErrorBoundary() {
 					<div className="flex flex-col gap-6">
 						<div className="flex flex-col gap-3">
 							<h1>We can't find this page:</h1>
-							<pre className="whitespace-pre-wrap break-all text-body-lg">
+							<pre className="text-body-lg whitespace-pre-wrap break-all">
 								{location.pathname}
 							</pre>
 						</div>

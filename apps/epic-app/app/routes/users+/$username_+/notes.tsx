@@ -1,9 +1,10 @@
+import { cn } from '@epic-stack-monorepo/ui'
+import { Icon } from '@epic-stack-monorepo/ui/icon'
 import { json, type DataFunctionArgs } from '@remix-run/node'
 import { Link, NavLink, Outlet, useLoaderData } from '@remix-run/react'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
-import { Icon } from '#app/components/ui/icon.tsx'
 import { prisma } from '#app/utils/db.server.ts'
-import { cn, getUserImgSrc, invariantResponse } from '#app/utils/misc.tsx'
+import { getUserImgSrc, invariantResponse } from '#app/utils/misc.tsx'
 import { useOptionalUser } from '#app/utils/user.ts'
 
 export async function loader({ params }: DataFunctionArgs) {
@@ -32,12 +33,12 @@ export default function NotesRoute() {
 		'line-clamp-2 block rounded-l-full py-2 pl-8 pr-6 text-base lg:text-xl'
 	return (
 		<main className="container flex h-full min-h-[400px] px-0 pb-12 md:px-8">
-			<div className="grid w-full grid-cols-4 bg-muted pl-2 md:container md:mx-2 md:rounded-3xl md:pr-0">
+			<div className="bg-muted grid w-full grid-cols-4 pl-2 md:container md:mx-2 md:rounded-3xl md:pr-0">
 				<div className="relative col-span-1">
 					<div className="absolute inset-0 flex flex-col">
 						<Link
 							to={`/users/${data.owner.username}`}
-							className="flex flex-col items-center justify-center gap-2 bg-muted pb-4 pl-8 pr-4 pt-12 lg:flex-row lg:justify-start lg:gap-4"
+							className="bg-muted flex flex-col items-center justify-center gap-2 pb-4 pl-8 pr-4 pt-12 lg:flex-row lg:justify-start lg:gap-4"
 						>
 							<img
 								src={getUserImgSrc(data.owner.image?.id)}
@@ -78,7 +79,7 @@ export default function NotesRoute() {
 						</ul>
 					</div>
 				</div>
-				<div className="relative col-span-3 bg-accent md:rounded-r-3xl">
+				<div className="bg-accent relative col-span-3 md:rounded-r-3xl">
 					<Outlet />
 				</div>
 			</div>

@@ -10,7 +10,11 @@ export default {
 	serverPlatform: 'node',
 	tailwind: true,
 	postcss: true,
-	watchPaths: ['./tailwind.config.ts'],
+	watchPaths: [
+		'./tailwind.config.ts',
+		'../../packages/ui/src/**/*',
+		'../../packages/client-hints/src/**/*',
+	],
 	routes: async defineRoutes => {
 		return flatRoutes('routes', defineRoutes, {
 			ignoredRouteFiles: [

@@ -1,5 +1,6 @@
 import { conform, useForm } from '@conform-to/react'
 import { getFieldsetConstraint, parse } from '@conform-to/zod'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
 import {
 	json,
 	redirect,
@@ -10,7 +11,6 @@ import { Form, useActionData, useLoaderData } from '@remix-run/react'
 import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { ErrorList, Field } from '#app/components/forms.tsx'
-import { StatusButton } from '#app/components/ui/status-button.tsx'
 import { requireAnonymous, resetUserPassword } from '#app/utils/auth.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
 import { invariant, useIsPending } from '#app/utils/misc.tsx'
@@ -121,7 +121,7 @@ export default function ResetPasswordPage() {
 		<div className="container flex flex-col justify-center pb-32 pt-20">
 			<div className="text-center">
 				<h1 className="text-h1">Password Reset</h1>
-				<p className="mt-3 text-body-md text-muted-foreground">
+				<p className="text-body-md text-muted-foreground mt-3">
 					Hi, {data.resetPasswordUsername}. No worries. It happens all the time.
 				</p>
 			</div>

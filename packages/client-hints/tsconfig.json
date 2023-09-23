@@ -1,0 +1,5 @@
+{
+  "extends": "@epic-stack-monorepo/tsconfig/react.json",
+  "include": [".eslintrc.js", ".prettierrc.js", "**/*.ts", "**/*.tsx", "*.cjs"],
+  "exclude": ["node_modules"],
+}

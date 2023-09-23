@@ -1,5 +1,6 @@
 import { conform, useForm } from '@conform-to/react'
 import { getFieldsetConstraint, parse } from '@conform-to/zod'
+import { StatusButton } from '@epic-stack-monorepo/ui/status-button'
 import {
 	json,
 	redirect,
@@ -16,7 +17,6 @@ import { safeRedirect } from 'remix-utils'
 import { z } from 'zod'
 import { CheckboxField, ErrorList, Field } from '#app/components/forms.tsx'
 import { Spacer } from '#app/components/spacer.tsx'
-import { StatusButton } from '#app/components/ui/status-button.tsx'
 import { requireAnonymous, sessionKey, signup } from '#app/utils/auth.server.ts'
 import { redirectWithConfetti } from '#app/utils/confetti.server.ts'
 import { prisma } from '#app/utils/db.server.ts'

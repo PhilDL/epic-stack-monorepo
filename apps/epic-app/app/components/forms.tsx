@@ -1,9 +1,9 @@
 import { useInputEvent } from '@conform-to/react'
+import { Checkbox, type CheckboxProps } from '@epic-stack-monorepo/ui/checkbox'
+import { Input } from '@epic-stack-monorepo/ui/input'
+import { Label } from '@epic-stack-monorepo/ui/label'
+import { Textarea } from '@epic-stack-monorepo/ui/textarea'
 import React, { useId, useRef } from 'react'
-import { Checkbox, type CheckboxProps } from './ui/checkbox.tsx'
-import { Input } from './ui/input.tsx'
-import { Label } from './ui/label.tsx'
-import { Textarea } from './ui/textarea.tsx'
 
 export type ListOfErrors = Array<string | null | undefined> | null | undefined
 
@@ -19,7 +19,7 @@ export function ErrorList({
 	return (
 		<ul id={id} className="flex flex-col gap-1">
 			{errorsToRender.map(e => (
-				<li key={e} className="text-[10px] text-foreground-danger">
+				<li key={e} className="text-foreground-danger text-[10px]">
 					{e}
 				</li>
 			))}
@@ -137,7 +137,7 @@ export function CheckboxField({
 				<label
 					htmlFor={id}
 					{...labelProps}
-					className="self-center text-body-xs text-muted-foreground"
+					className="text-body-xs text-muted-foreground self-center"
 				/>
 			</div>
 			<div className="px-4 pb-3 pt-1">
