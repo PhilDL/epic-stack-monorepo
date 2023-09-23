@@ -36,6 +36,13 @@ tool of choice is turborepo (feel free to switch it for NX).
     - eslint containing some common eslint configs.
     - tsconfig presets.
 
+## Follow the commit history
+
+- 1) [init monorepo setup with pnpm](https://github.com/PhilDL/epic-stack-monorepo/commit/5296754553ea26e6edcdde7b31b927403705620a): takes you through a working local monorepo developpement environment with PNPM.
+- 2) [Adapt Dockerfile, fix CI and deploy the epic-stack app](https://github.com/PhilDL/epic-stack-monorepo/commit/a82486866507688025c84ae54bf6f05f71c73e3d): takes CI to green, add turborepo, pipelines, fix deployment and Dokerfile.
+- 3) [Extract logic to monorepo packages: UI package, "client-hints" package, and config (tsconfig, eslint) packages](https://github.com/PhilDL/epic-stack-monorepo/commit/33997f9e47e41f6919990cb4dfcd098c65396a71): package creation examples.
+
+
 ## Local development
 
 > **Warning** All the following commands should be launched from the **monorepo
