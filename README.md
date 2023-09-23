@@ -11,12 +11,35 @@
   </p>
 </div>
 
+## Epic Stack Monorepo Example
+
 This monorepo was created with `pnpm` for space efficiency and more convienence
-in monorepos than `npm`.
+in monorepos than `npm`. On top of that package manager the monorepo pipeline
+tool of choice is turborepo (feel free to switch it for NX).
+
+- `apps` Folder containing the applications
+  - [`epic-app`](https://github.com/PhilDL/epic-stack-monorepo/tree/main/apps/epic-app):
+    the [Remix.run](https://remix.run) Epic Stack app.
+- `packages` Folder containing examples
+
+  - [`ui`](https://github.com/PhilDL/epic-stack-monorepo/tree/main/packages/ui):
+    this UI package contains the [shadcn/ui](https://ui.shadcn.com/) Component
+    previously in the Epic Stack App. It also exposes a Tailwind config
+    "epic-stack" preset, that you consume from the Remix app.
+  - [`client-hints`](https://github.com/PhilDL/epic-stack-monorepo/tree/main/packages/client-hints):
+    is an example package that takes the original functions and hooks handling
+    client-hints in the `utils` folder of the original app, and put that into
+    their own package.
+    [`The hooks`](https://github.com/PhilDL/epic-stack-monorepo/tree/main/packages/client-hints/src/client-hints.tsx):
+    were refactored to take "loader" as generics (typically the root loader).
+  - Some config packages:
+    - eslint containing some common eslint configs.
+    - tsconfig presets.
 
 ## Local development
 
-**All the following commands are run from the root of the monorepo.**
+> **Warning** All the following commands should be launched from the **monorepo
+> root directory**
 
 ### Install dependencies
 
